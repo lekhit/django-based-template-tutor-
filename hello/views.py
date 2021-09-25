@@ -24,6 +24,10 @@ def display(request,name):
     "chapter":chapter
   })
 
+def courses(request):
+
+  return render(request,'hello/courses.html')
+
 def chapters(request):
   
   for course in js['courses']:
