@@ -15,27 +15,37 @@ def index(request):
 def display(request,name):
 
   src="https://voe.sx/e/"+name
-  title=data[name]['title']
-  chapter=data[name]['chapter']
+  #title=data[name]['title']
+  #chapter=data[name]['chapter']
   
   return render(request, 'hello/display.html',{
     "src":src,
-    "title":title,
-    "chapter":chapter
+    #"title":title,
+    #"chapter":chapter
   })
 
 def courses(request):
+  lt=[]
+  courses=dict()
+  for course in js['courses']:
+    #courses[course['id']]=course['title']
+    lt.append([int(course['id']),course['title']])
+     
+    print(courses)
+  return render(request,'hello/courses.html',{
+    "courses":js['courses'],
+    "base":"chapter"
+  })
 
-  return render(request,'hello/courses.html')
+def chapters(request,code):
 
-def chapters(request):
-  
+  courses=js['courses'][code-1]
   for course in js['courses']:
     title=course['title']
     chapters=course['chapters']
+  chapters=courses['chapters']
     
   return render(request,'hello/chapters1.html',{
     "chapters":chapters,
-    
-    
+    "base":"lesson"       
   })
