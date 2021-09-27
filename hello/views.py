@@ -25,27 +25,22 @@ def display(request,name):
   })
 
 def courses(request):
-  lt=[]
-  courses=dict()
-  for course in js['courses']:
-    #courses[course['id']]=course['title']
-    lt.append([int(course['id']),course['title']])
-     
-    print(courses)
+
   return render(request,'hello/courses.html',{
     "courses":js['courses'],
-    "base":"chapter"
+    #"base_url":"chapter"
   })
 
-def chapters(request,code):
+def chapters(request,name):
 
-  courses=js['courses'][code-1]
+  #courses=js['courses']
   for course in js['courses']:
     title=course['title']
-    chapters=course['chapters']
-  chapters=courses['chapters']
+    if title==name:
+      chapters=course['chapters']
+  #chapters=courses['chapters']
     
   return render(request,'hello/chapters1.html',{
     "chapters":chapters,
-    "base":"lesson"       
+    #"base":"lesson"       
   })

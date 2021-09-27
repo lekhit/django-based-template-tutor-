@@ -8,7 +8,7 @@
   
 {% for lesson in courses %}
        
- <a href="{base}/{{lesson.title}}" class="list-group-item list-group-item-action">
+ <a href="{% url 'chapters' lesson.title %}" class="list-group-item list-group-item-action">
 {{lesson.title}}
 
  </a>
