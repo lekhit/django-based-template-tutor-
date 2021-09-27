@@ -31,17 +31,17 @@ def courses(request):
     #"base_url":"chapter"
   })
 
-def chapters(request,name):
+def chapters(request,chapter):
 
   #courses=js['courses']
   for course in js['courses']:
     title=course['title']
-    if title==name:
+    if title==chapter:
       chapters=course['chapters']
   #chapters=courses['chapters']
     
   return render(request,'hello/chapters1.html',{
     "chapters":chapters,
-    "course_name":course['title']
+    "course_name":chapter
     #"base":"lesson"       
   })

@@ -4,9 +4,20 @@
 
 
 <div class="card">
+  <!---
   <h5 class="card-header">{{ chapter }}</h5>
   <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
+--->
+<div class="container">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'course' %}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'chapters' chapter %}">{{ chapter }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
+  </ol>
+</nav>
+</div>
     <div class="container">
   <br>
   <br>
@@ -31,9 +42,9 @@ frameborder="0"
   </div>
 </div>
 </div>
-
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="{% url 'chapters' chapter %}"class="btn btn-primary">Back To All Chapters</a>
+<div class="container">
+    <p class="card-text">{{title}}</p>
+   </div>
   </div>
 </div>
 

@@ -1,6 +1,15 @@
 {% extends 'hello/index.html' %}
 {% block body %}
+<div class="container">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'course' %}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{course_name}}</li>
+  </ol>
+</nav>
+</div>
 
+<div class="container">
 <div class="accordion" id="accordionExample" margin="20px">
  {% for chapter in chapters %}
 
@@ -38,6 +47,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 {% endblock %}
