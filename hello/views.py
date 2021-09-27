@@ -12,16 +12,16 @@ def index(request):
   return render(request,'hello/boot.html',{
 "items":list(range(10))
   })
-def display(request,name):
+def display(request,chapter,lesson,source):
 
-  src="https://voe.sx/e/"+name
+  src="https://voe.sx/e/"+source
   #title=data[name]['title']
   #chapter=data[name]['chapter']
   
   return render(request, 'hello/display.html',{
     "src":src,
-    #"title":title,
-    #"chapter":chapter
+    "title":lesson,
+    "chapter":chapter
   })
 
 def courses(request):
@@ -42,5 +42,6 @@ def chapters(request,name):
     
   return render(request,'hello/chapters1.html',{
     "chapters":chapters,
+    "course_name":course['title']
     #"base":"lesson"       
   })
