@@ -1,0 +1,16 @@
+{%extends 'login/layout.html'%}
+
+
+{% block body %}
+{% if message %}
+<div>{{message}}  </div>
+{%endif%}
+<form action="{% url 'login' %}" method="POST" >
+{{form}}
+{%csrf_token%}
+<input type="submit">
+
+</form>
+
+
+{%endblock%}
