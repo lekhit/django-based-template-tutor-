@@ -13,8 +13,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{% url 'course' %}">Home</a></li>
-    <li class="breadcrumb-item"><a href="{% url 'chapters' course %}">{{ course }}</a></li>
-     <li class="breadcrumb-item"><a href="{% url 'chapters' course %}">{{ chapter }}</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'chapters' lesson.course.id %}">{{ course }}</a></li>
+     <li class="breadcrumb-item"><a href="{% url 'chapters' lesson.course.id %}">{{ chapter }}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
   </ol>
 </nav>
@@ -43,7 +43,15 @@ frameborder="0"
   </div>
 </div>
 </div>
+<br/>
 <div class="container">
+  {% for lesson in lessons %}
+       <div class="list-group">
+ 
+  <a href="{% url 'display' lesson.id %}" class="list-group-item list-group-item-action {% if lesson.id == active %} active {%endif%}">{{ lesson.title }}</a>
+  
+</div>
+{% endfor %}
     <p class="card-text">{{title}}</p>
    </div>
   </div>

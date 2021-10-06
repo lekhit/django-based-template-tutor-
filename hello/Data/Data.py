@@ -1,9 +1,23 @@
-import json
+import requests
+import json,re
+pat=re.compile(r"(\d+){1,}")
 
-js=json.load('sample.json')
-dic=dict()
-for chapter in js['chapters']:
-  chapter_title=chapter['title']
-  for lesson in chapter['lessons']:
-    lesson_title=lesson['title']
-    lesson_source=lesson['source']
+'''
+
+url = "https://hdb01-patil1001970h01.harperdbcloud.com"
+
+payload = json.dumps({
+  "operation": "create_table",
+  "schema": "dev",
+  "table": "breed",
+  "hash_attribute": "id"
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Basic cGF0aWw6ZHIxMDAxOTcw'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+'''

@@ -11,22 +11,22 @@
 
 <div class="container">
 <div class="accordion" id="accordionExample" margin="20px">
- {% for chapter in chapters %}
+ {% for chapter,lessons in chapters.items %}
 
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a{{ forloop.counter }} "aria-expanded="false" aria-controls="a{{ forloop.counter }}">
-       {{ chapter.title }}
+       {{ chapter }}
       </button>
     </h2>
     <div id="a{{ forloop.counter }}"
     class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-{% for lesson in chapter.lessons %}
+{% for lesson in lessons %}
        <div class="list-group">
  
-  <a href="{% url 'display' course_name chapter.title lesson.title lesson.source %}"{{ base }}/{{ lesson.source }} class="list-group-item list-group-item-action">{{ lesson.title }}</a>
+  <a href="{% url 'display' lesson.id %}" class="list-group-item list-group-item-action">{{ lesson.title }}</a>
   
 </div>
 {% endfor %}

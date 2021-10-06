@@ -3,14 +3,11 @@
 <div class="container">
 <div class="list-group">
  
-  <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-  <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-  <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-  
-{% for lesson in courses %}
+
+{% for course in courses %}
        
- <a href="{% url 'chapters' lesson.title %}" class="list-group-item list-group-item-action">
-{{lesson.title}}
+ <a href="{% url 'chapters' course.id %}" class="list-group-item list-group-item-action">
+{{ course.title }}
 
  </a>
   

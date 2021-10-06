@@ -5,8 +5,10 @@ urlpatterns=[
   path('login/',views.login_view,name="login"),
   path('logout/',views.logout_view,name="logout"),
   
-  path('course/',views.courses,name='course'),
+  path('course/',views.courses1,name='course'),
+   path('lesson/<int:course_id>',views.chapters1,name='chapters'),
   path('lesson/<str:chapter>',views.chapters,name='chapters'),
+   path('display/<int:lesson_id>',views.display1,name="display"),
   path('<str:course>/<str:chapter>/<str:lesson>/<str:source>',views.display,name="display"),
   #path('<str:name>',views.display,name='display'),
   ]
