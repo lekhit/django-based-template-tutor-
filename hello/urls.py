@@ -9,6 +9,7 @@ urlpatterns=[
    path('lesson/<int:course_id>',views.chapters1,name='chapters'),
   path('lesson/<str:chapter>',views.chapters,name='chapters'),
    path('display/<int:lesson_id>',views.display1,name="display"),
+	path('display/<str:source>/<int:lesson_id>',views.custom_display,name="custom_display"),
   path('<str:course>/<str:chapter>/<str:lesson>/<str:source>',views.display,name="display"),
   #path('<str:name>',views.display,name='display'),
   ]

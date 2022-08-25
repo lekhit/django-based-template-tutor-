@@ -11,4 +11,9 @@ version = "0.1.0"
 [tool.poetry.dependencies]
 Django = "^3.0"
 python = "^3.8"
+django-cassandra-engine = "^1.7.0"
+psycopg = "^3.0.8"
+psycopg2-binary = "^2.9.3"
+django-cockroachdb = "^3.2.2"
+dj-database-url = "^0.5.0"
 [tool.poetry.dev-dependencies]

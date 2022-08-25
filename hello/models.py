@@ -111,33 +111,38 @@ def num(item,default=0):
     print(item,'no index found so returned 0')
     return default
 
-
-def put_data(address):
-  with open(address,'r') as f:
-    i=0
-    for item in json.load(f)['data']:
-          i+=1
-          s=Source.objects.create(
-        voe=item['source'],
-        lesson=Lesson.objects.get_or_create(
-          title=item.get("title"),
-          course=Course.objects.get_or_create(
-              title=item.get("course")
-            )[0],
-          index=num(item.get('title'),i),
-
-
-          chapter=Chapter.objects.get_or_create(
-            title=item.get('chapter'),
-            index=num(item.get('chapter'),i),
-
-            
+class update:
+  def update_one(self,item,i):
+    s=Source.objects.create(
+          voe=item['source'],
+          lesson=Lesson.objects.get_or_create(
+            title=item.get("title"),
             course=Course.objects.get_or_create(
-              title=item.get("course")
+                title=item.get("course")
+              )[0],
+            index=num(item.get('title'),i),
+
+
+            chapter=Chapter.objects.get_or_create(
+              title=item.get('chapter'),
+              index=num(item.get('chapter'),i),
+
+              
+              course=Course.objects.get_or_create(
+                title=item.get("course")
+              )[0]
             )[0]
           )[0]
-        )[0]
-      )
+        )
+  def __init__(self,address=None):
+    if address:
+      self.put_data(address)
+  def put_data(self,address):
+    with open(address,'r') as f:
+      i=0
+      for item in json.load(f)['data']:
+            i+=1
+            self.update_one(item,i)
 
 put_data('hello/data.json')
 

@@ -1,3 +1,4 @@
+import os
 """
 Django settings for mysite project.
 
@@ -81,6 +82,19 @@ DATABASES = {
     }
 }
 
+'''
+DATABASES = {
+  'default': {
+    'ENGINE': 'django_cockroachdb',
+    'NAME': 'fresh-cat-2187.defaultdb',
+    'USER': 'patil1001970',
+    'PASSWORD': 'iqw4vrW4Bsz9Q0ij',
+
+    'HOST': 'free-tier6.gcp-asia-southeast1.cockroachlabs.cloud',
+    'PORT': '26257',
+}
+}
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
