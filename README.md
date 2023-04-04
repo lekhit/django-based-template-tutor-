@@ -29,6 +29,13 @@ urlpatterns = [
 ]
 ```
 
+![Screenshot 2023-04-04 at 6 23 11 PM](https://user-images.githubusercontent.com/82832791/229797750-ed10e082-9502-4597-923b-1c8d17ce4d1a.png)
+![Screenshot 2023-04-04 at 6 23 30 PM](https://user-images.githubusercontent.com/82832791/229797835-2ee3d25f-19fb-4f58-97f0-ad5d6ce46a4e.png)
+![Screenshot 2023-04-04 at 6 24 00 PM](https://user-images.githubusercontent.com/82832791/229797971-1ae775a3-ef07-46f0-bf9d-f10574acfc66.png)
+![Screenshot 2023-04-04 at 6 24 54 PM](https://user-images.githubusercontent.com/82832791/229798200-041c8cb6-0e4c-479b-80af-010027ab5bb7.png)
+![Screenshot 2023-04-04 at 6 26 12 PM](https://user-images.githubusercontent.com/82832791/229798592-83dd060b-d1cb-4064-a03b-2a4a3be93bcd.png)
+
+
 ## Shell
 
 Django utilizes the shell for managing your site. For this click on the `?` in the lower-right corner and click "Workspace shortcuts" from there you can open a new shell pane. 
